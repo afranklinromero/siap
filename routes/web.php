@@ -25,5 +25,6 @@ Route::get('home', 'HomeController@index');
 Route::get('fuerza', 'HomeController@fuerza');
 Route::get('comando', 'HomeController@comando');
 Route::resource('clientes', 'ClienteController');
+Route::get('inicio', 'HomeController@inicio');
 
 
