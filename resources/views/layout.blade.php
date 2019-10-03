@@ -40,8 +40,8 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class=" nav-link">Home</a>
+      <li id="inicio" class="nav-item d-none d-sm-inline-block">
+        <a href="#" class=" nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -175,8 +175,8 @@
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Tte. Romero</a>
+        <div class="info"><a class="d-block">Bienvenido</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -195,12 +195,22 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href=" prueba" class="activamenu nav-link ">
+            
+              <li id="fuerza" class="nav-item">
+                <div class="activamenu nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fuerza Comandos</p>
-                </a>
+                  <p>Fuerza</p>
+                </div>
               </li>
+             
+              
+              <li id="comando" class="nav-item">
+                <div class="activamenu nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Comando</p>
+                </div>
+              </li>
+              
               <li class="nav-item">
                 <a href="./index2.html" class="activamenu nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -716,7 +726,7 @@
 
   @yield('content')
 
-  @yield('prueba')
+  
 
   <!-- Content Wrapper. Contains page content -->
   
@@ -737,7 +747,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -773,10 +782,44 @@
 <script src="dist/js/demo.js"></script>
 <script src="dist/js/js.js"></script>
 <script>
+
+
 $('a.activamenu').click(function(){
     $('a.activamenu').removeClass("active");
     $(this).addClass("active");
 });
+
+
+
+$(document).ready(function(e){
+  $('#fuerza').on ('click', function (){
+    $("#contenido").load("/fuerza");
+    var x = document.getElementById("myinicio");
+        x.style.display = "none";
+  });
+});
+
+$(document).ready(function(e){
+  $('#comando').on ('click', function (){
+    $("#contenido").load("/comando");
+    var x = document.getElementById("myinicio");
+        x.style.display = "none";
+    
+
+  });
+});
+
+$(document).ready(function(e){
+  $('#inicio').on ('click', function (){
+    var x = document.getElementById("contenido");
+        x.style.display = "none";
+    var x = document.getElementById("myinicio");
+        x.style.display = "block";
+
+  });
+});
+
+
 
 
 </script>
