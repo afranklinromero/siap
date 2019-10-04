@@ -41,6 +41,8 @@
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 
+        
+
 
            <div class="form-group has-feedback">
              <label>email</label>
