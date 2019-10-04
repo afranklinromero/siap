@@ -27,7 +27,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-  
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -190,27 +190,27 @@
              <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
              <i class="nav-icon fab fa-whmcs"></i>
               <p>Administracion
-                
+
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-            
+
               <li id="fuerza" class="nav-item">
                 <div class="activamenu nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fuerza</p>
                 </div>
               </li>
-             
-              
+
+
               <li id="comando" class="nav-item">
                 <div class="activamenu nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Comando</p>
                 </div>
               </li>
-              
+
               <li class="nav-item">
                 <a href="./index2.html" class="activamenu nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -249,14 +249,14 @@
               </li>
             </ul>
           </li>
-         
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link activamenu">
               <i class="nav-icon fas fa-th"></i>
               <p>
               Clasificadores
                 <i class="fas fa-angle-left right"></i>
-                
+
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -290,7 +290,7 @@
                   <p>Accesorios y Autopartes</p>
                 </a>
               </li>
-              
+
             </ul>
           </li>
 
@@ -302,18 +302,18 @@
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            
+
             <ul class="nav nav-treeview">
-              
-              
-              
+
+
+
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link activamenu">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                   FELCC
                     <i class="fas fa-angle-left right"></i>
-                    
+
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
@@ -353,8 +353,8 @@
                       <p>Denunciados</p>
                     </a>
                   </li>
-                  
-                  
+
+
               </ul>
               </li>
 
@@ -364,7 +364,7 @@
                   <p>
                   FELCV
                     <i class="fas fa-angle-left right"></i>
-                    
+
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
@@ -405,8 +405,8 @@
                       <p>Denunciados</p>
                     </a>
                   </li>
-                  
-                  
+
+
                 </ul>
               </li>
 
@@ -416,7 +416,7 @@
                   <p>
                   Diprove
                     <i class="fas fa-angle-left right"></i>
-                    
+
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
@@ -457,15 +457,15 @@
                       <p>Denunciados</p>
                     </a>
                   </li>
-                  
-                  
+
+
                 </ul>
               </li>
 
-             </ul> 
+             </ul>
           </li>
 
-          <li class="nav-item has-treeview"> 
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -500,7 +500,7 @@
               </li>
             </ul>
           </li>
-       
+
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
@@ -516,10 +516,10 @@
                   <p>Mapas de Calor</p>
                 </a>
               </li>
-              
+
             </ul>
           </li>
-          
+
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="tipoObjetos" class="nav-link">
@@ -726,10 +726,10 @@
 
   @yield('content')
 
-  
+
 
   <!-- Content Wrapper. Contains page content -->
-  
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
@@ -804,7 +804,7 @@ $(document).ready(function(e){
     $("#contenido").load("/comando");
     var x = document.getElementById("myinicio");
         x.style.display = "none";
-    
+
 
   });
 });

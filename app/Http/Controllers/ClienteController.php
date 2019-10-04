@@ -3,74 +3,80 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Http\Requests\ClienteRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClienteController extends Controller
 {
     //
     public function index(){
-        $clientes = Cliente::orderby('nombre', 'ASC')->paginate();
-        //dd($ciudads);
+        $clientes = Cliente::orderby('nombres', 'ASC')->paginate();
+        //dd($clientes);
         return view ('clientes.index', compact('clientes'));
     }
 
     public function show($id){
-        $ciudad = Cliente::find($id);
-        //dd($ciudad);
-        return view ('clientes.show', compact('ciudad'));
+        $cliente = Cliente::find($id);
+        //dd($cliente);
+        return view ('clientes.show', compact('cliente'));
     }
 
 
 
     public function edit($id){
-        $ciudad = Cliente::find($id);
-        return view('clientes.edit', compact('ciudad'));
+        $cliente = Cliente::find($id);
+        return view('clientes.edit', compact('cliente'));
     }
 
     public function create(){
-        $provincias = Provincia::orderby('nombre', 'ASC');
-        return view('clientes.create', compact('provincias'));
+        return view('clientes.create');
     }
 
-    public function store(CiudadRequest $request){
-        $ciudad = new Ciudad;
+    public function store(ClienteRequest $request){
+        $cliente = new cliente;
 
-        $ciudad->provincia_id = $request->provincia_id;
-        $ciudad->nombre = $request->nombre;
-        $ciudad->sigla1 = $request->sigla1;
-        $ciudad->sigla2 = $request->sigla2;
-        $ciudad->estado = 'AC';
+        $cliente->user_id = Auth::user()->id;
+        $cliente->ci = $request->ci;
+        $cliente->nombres = $request->nombres;
+        $cliente->apellidos = $request->apellidos;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->ubicacion = $request->ubicacion;
+        $cliente->mac = $request->mac;
+        $cliente->estado = 'AC';
 
         if ($request->validated()){
-            $ciudad->save();
-            return redirect()->route('clientes.show', $ciudad->id)
-                    ->with('info','El elemento ha sido guardado' . $ciudad->id);
+            $cliente->save();
+            return redirect()->route('clientes.show', $cliente->id)
+                    ->with('info','El elemento ha sido guardado' . $cliente->id);
         } else {
             return view('clientes.create')->with('info','corrija lo siguientes errores');
         }
-
-
-
     }
 
-    public function update(CiudadRequest $request, $id){
-        $ciudad = Cliente::find($id);
+    public function update(ClienteRequest $request, $id){
+        $cliente = Cliente::find($id);
 
-        $ciudad->provincia_id = $request->provincia_id;
-        $ciudad->nombre = $request->nombre;
-        $ciudad->sigla1 = $request->sigla1;
-        $ciudad->sigla2 = $request->sigla2;
+        $cliente->user_id = Auth::user()->id;
+        $cliente->ci = $request->ci;
+        $cliente->nombres = $request->nombres;
+        $cliente->apellidos = $request->apellidos;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->ubicacion = $request->ubicacion;
+        $cliente->mac = $request->mac;
 
-        $ciudad->save();
+        $cliente->save();
 
-        return redirect()->route('clientes.show', $ciudad->id)
+        return redirect()->route('clientes.show', $cliente->id)
                         ->with('info','El elemento ha sido actualizado');
     }
 
     public function destroy($id){
-        $ciudad = Cliente::find($id);
-        $ciudad->delete();
-        return redirect()->route('clientes.index', $ciudad->id)
-                ->with('info','El elemento '.$ciudad->id.' ha sido eliminado');
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+        return redirect()->route('clientes.index', $cliente->id)
+                ->with('info','El elemento '.$cliente->id.' ha sido eliminado');
     }
 }

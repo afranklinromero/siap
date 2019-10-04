@@ -35,7 +35,7 @@ class AuthController extends Controller
     {
         $this->auth = $auth;
         $this->middleware('guest', ['except' => 'getLogout']);
-      
+
     }
 
     /**
@@ -44,7 +44,7 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-   
+
 
 
 //login
@@ -55,9 +55,9 @@ class AuthController extends Controller
     }
 
 
-       
 
-        public function postLogin(Request $request)
+
+    public function postLogin(Request $request)
    {
     $this->validate($request, [
         'email' => 'required',
@@ -80,7 +80,7 @@ class AuthController extends Controller
 
 //login
 
- //registro   
+ //registro
 
 
         protected function getRegister()
@@ -89,7 +89,7 @@ class AuthController extends Controller
     }
 
 
-        
+
 
         protected function postRegister(Request $request)
 
@@ -113,11 +113,11 @@ class AuthController extends Controller
     if($user->save()){
 
          return "se ha registrado correctamente el usuario";
-               
-    }
-   
 
-   
+    }
+
+
+
 
 }
 
@@ -134,7 +134,7 @@ protected function getLogout()
 
 
 
-    
+
 
 
 
