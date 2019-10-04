@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistema de Antecedentes| Dashboard</title>
+  <title>Sistema de Servicio de Wifi</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -199,7 +199,7 @@
               <li id="fuerza" class="nav-item">
                 <div class="activamenu nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fuerza</p>
+                  <p>Agregar Cliente</p>
                 </div>
               </li>
 
